@@ -1,17 +1,17 @@
 import random
-top_of_range= input("type a number: ")  # inputting a random number ny user
+top_of_range= input("type a number: ")  # inputting a number ny user
 
-if top_of_range.isdigit():
+if top_of_range.isdigit(): #checking if input num is int
     top_of_range=int(top_of_range)
     
     if top_of_range<=0:
         print("please type a number more than 0")
         quit()    
 else:
-    print("please input a num!")    
+    print("please input a number next time!")    
     quit()
 
-randomnum=random.randint(0,top_of_range)
+randomnum=random.randint(0,top_of_range) # to generate random number 
 
 print("""Now lets play the GUESSING GAME!""")
 guesses=0

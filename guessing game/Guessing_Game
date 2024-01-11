@@ -1,0 +1,37 @@
+import random
+top_of_range= input("type a number: ")  # inputting a random number ny user
+
+if top_of_range.isdigit():
+    top_of_range=int(top_of_range)
+    
+    if top_of_range<=0:
+        print("please type a number more than 0")
+        quit()    
+else:
+    print("please input a num!")    
+    quit()
+
+randomnum=random.randint(0,top_of_range)
+
+print("""Now lets play the GUESSING GAME!""")
+guesses=0
+
+while True:
+      guesses+=1   
+      user_guess=input("Make a guesss!: ")
+      if user_guess.isdigit():
+        user_guess=int(user_guess)
+
+        if user_guess==randomnum:
+            print("GOT EM'!")
+            break
+        elif user_guess > randomnum:
+            print("You were above the number!")
+        else:
+            print("You were below the number!")
+      else:
+        print("guess a number!!")
+        continue
+
+print(f"""CONGRATS!!
+      You got it in {guesses} guesses!""")

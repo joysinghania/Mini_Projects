@@ -1,0 +1,48 @@
+import random
+
+user_wins=0
+computer_wins=0
+options=["rock","paper","scissor"]
+
+while True:
+    user_input=input("Type Rock/Paper/Scissor or Q to quit game: ").lower() #so input is always lower
+    
+    if user_input=="q": #quit game
+        break
+    
+    if user_input not in options:
+        print("Please type the correct options!")
+        continue
+    
+    if user_input in options:
+        random_num=random.randint(0,2) # rock=0, paper=1, scissor=2
+        comp_guess= options[random_num]
+        print(f"Computer picks {comp_guess}.")
+        if user_input == comp_guess:
+            print("Its a tie!")
+            continue
+
+        elif user_input=="rock" and comp_guess =="scissor":
+            print("You won!")
+            user_wins+=1
+            continue
+
+        elif user_input=="scissor" and comp_guess =="paper":
+            print("You won!")
+            user_wins+=1
+            continue
+
+        elif user_input=="paper" and comp_guess =="rock":
+            print("You won!")
+            user_wins+=1
+            continue
+
+        else:
+            print("You Lose!")
+            computer_wins+=1
+            continue
+
+print(f"""Thanks for playing!
+You won {user_wins} times, and the computer won {computer_wins} times!""")
+
+print("GoodByeeeee!")

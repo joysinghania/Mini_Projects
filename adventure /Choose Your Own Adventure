@@ -1,0 +1,64 @@
+import time
+name = input("Type your name: ")
+print(f"Welcome {name} to this adventure!")
+
+answer= input("You are on a road and it ended, which way will you go?(left or right?): ").lower()
+
+if answer== "right":
+    answer= input("You've come to a river. Do you want to WALK around or SWIM accross?: ").lower()
+    
+    if answer== "walk":
+        print("CHECKPOINT REACHED")
+        time.sleep(0.5)
+        print("You found 3 wizards!")
+        time.sleep(1)
+        print("All were wearing different colored hats.")
+        time.sleep(2)
+        print("One had Blue colored, the other Red, and the last one had a Black colored hat.")
+        time.sleep(2)
+        while True:
+            
+            answer=input("All of them said to choose one hat. Which one will you chose?: ").lower()
+            if answer== "red":
+                print("Red?!? Seriously!?!")
+                time.sleep(1)
+                print("Alright then. You called for it")
+                time.sleep(2)
+                print("You died because of a snake bite. Congrats. Almost as if RED means danger.")
+                player_continue=input("Do you want to play again? (Y/N)").lower()
+                if player_continue=="y":
+                    continue
+                elif player_continue=="n":
+                    break
+            
+            elif answer=="black":
+                print("The hat exploded and you died.")
+                player_continue=input("Do you want to play again? (Y/N)").lower()
+                if player_continue=="y":
+                    continue
+                elif player_continue=="n":
+                    break
+            
+            elif answer== "blue":
+                print("YOU'VE WON GOLD! CONGRATULATIONS")
+                break
+            else:
+                print("Not a valid option. You lose")
+            
+    
+    elif answer== "swim":
+        print("You got eaten by an alligator")
+        
+    
+    else:
+        print("Not a valid option. You lose")
+        
+
+elif answer== "left":
+    print("You fell from the road and now you are unalive")
+    
+
+else:
+    print("Not a valid option")
+
+print("Thanks for playing!")
